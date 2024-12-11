@@ -8,6 +8,7 @@ services:
       context: .
     ports:
       - 8000:80
+      - 8001:8000
     environment:
       - DB_CONNECTION=pgsql
       - DB_HOST=db
@@ -16,10 +17,9 @@ services:
       - DB_USERNAME=postgres
       - DB_PASSWORD=wrgs2703    
       - APP_NAME=boletos-api
-      - APP_ENV=local
-      - APP_KEY=base64:lGAHdmePRKP2DX4BEWNf7UKP1ZBPuHXpDP1bpEe3xX4=
+      - APP_ENV=local  
       - APP_DEBUG=true
-      - APP_TIMEZONE=UTC      
+      - APP_KEY=base64:lGAHdmePRKP2DX4BEWNf7UKP1ZBPuHXpDP1bpEe3xX4=
     container_name: server
   db:
     image: postgres
